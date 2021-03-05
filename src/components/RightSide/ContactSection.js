@@ -1,8 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Typography, Grid, Paper, TextField, Button } from '@material-ui/core';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
+import { Box, Typography, Grid, TextField, Button } from '@material-ui/core';
+
+//from email.js
+import emailjs from 'emailjs-com';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -45,15 +46,32 @@ const useStyles = makeStyles((theme) => ({
 const ContactSection = () => {
   const classes = useStyles();
 
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    
+    //those .env variables are required to sen the email with EmailJS
+    emailjs.sendForm(process.env.REACT_APP_EMAIL_JS_SERVICE_ID, process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID, e.target, process.env.REACT_APP_EMAIL_JS_USER_ID)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+
+     e.target.reset();
+  }
+
+
+
   return (
-    <Box className={classes.container}>
+    <Box className={classes.container} id="contact">
       
       <Grid container>
         <Grid item xs={12} sm={12} md={6}>
 
         <Box  height="100%" display="flex" flexDirection="column" alignItems="flex-start" justifyContent="start" >
         <Typography component="h4" variant="h4" >Te ayudo?</Typography>
-        <Typography component="h3" variant="h3" >Contactar</Typography>
+        <Typography component="h3" variant="h3" >Contactame</Typography>
         <Typography variant="body1" className={classes.contactDescription}>Por favos, si puedo ayudarte en alguno de tus proyectos
           con javascript, o tienes alguna duda, contactame a mi email mediante este formulario. 
         </Typography>
@@ -64,7 +82,7 @@ const ContactSection = () => {
         </Grid>
         <Grid item xs={12} sm={12} md={6}>
 
-          <form  className={classes.form}>
+          <form  className={classes.form} onSubmit={sendEmail}>
             <TextField     
               className={classes.formInput}
               size="small"
@@ -73,6 +91,7 @@ const ContactSection = () => {
               label="Nombre"
               defaultValue=""
               variant="outlined"
+              name="name"
             />
 
             <TextField
@@ -83,6 +102,7 @@ const ContactSection = () => {
               label="Email"
               defaultValue=""
               variant="outlined"
+              name="email"
             />
 
             <TextField
@@ -93,6 +113,7 @@ const ContactSection = () => {
               label="Asunto"
               defaultValue=""
               variant="outlined"
+              name="subject"
             />
 
             <TextField
@@ -104,9 +125,10 @@ const ContactSection = () => {
               rows={4}
               defaultValue=""
               variant="outlined"
+              name="message"
             />
 
-            <Button className={classes.formButton} type="submit" variant="contained" color="secondary">
+            <Button className={classes.formButton} type="submit"  variant="contained" color="secondary">
               Enviar mensaje
             </Button>
           </form>

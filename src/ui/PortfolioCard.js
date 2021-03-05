@@ -71,7 +71,7 @@ export default function PortfolioCard({project}) {
 
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} id="projects">
       <CardActionArea href={project.linkPage} target="_blank">
         <CardMedia
           className={classes.media}

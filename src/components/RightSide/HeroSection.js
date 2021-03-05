@@ -54,7 +54,7 @@ const HeroSection = () => {
   const classes = useStyles();
 
   return (
-    <Box p="1.5rem" height="100vh" display="flex" flexDirection="column" justifyContent="center">
+    <Box p="1.5rem" height="100vh" display="flex" flexDirection="column" justifyContent="center" id="home">
         <Typography component="span" className={classes.span}>Hola, soy Alejandro</Typography>
         <Typography component="h1" className={classes.title}>
             Desarrollador <br/>Fullstack Junior

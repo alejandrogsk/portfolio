@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Drawer, Hidden, IconButton, Typography, Box, Link} from '@material-ui/core';
+import {Drawer, Hidden, IconButton, Typography, Box} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
@@ -9,7 +9,7 @@ import TechSection from './RightSide/TechSection';
 import PortfolioSection from './RightSide/PortfolioSection';
 import ContactSection from './RightSide/ContactSection';
 
-
+import { Link } from 'react-scroll'
 
 const drawerWidth = 240;
 
@@ -114,10 +114,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const menuLinks = [
-  {title:"Home", path: "/"},
-  {title:"Sobre Mí", path: "/"},
-  {title:"Proyectos", path: "/"},
-  {title:"Contacto", path: "/"}
+  {title:"Inicio", path: "home"},
+  {title:"Tecnologias", path: "technologies"},
+  {title:"Proyectos", path: "projects"},
+  {title:"Contacto", path: "contact"}
 ]
 
 function ResponsiveDrawer(props) {
@@ -169,7 +169,7 @@ function ResponsiveDrawer(props) {
             <Box className={classes.linkBox}>
               {
                 menuLinks.map((link, index) => (
-                    <Link className={classes.menuLink} key={index}>{link.title}</Link>
+                    <Link onClick={() => setMobileOpen(!mobileOpen)} className={classes.menuLink} key={index} to={link.path} smooth={true} duration={1000}>{link.title}</Link>
                 ))
               }
             </Box>
@@ -193,7 +193,7 @@ function ResponsiveDrawer(props) {
         <Box className={classes.linkBox}>
             {
                 menuLinks.map((link, index) => (
-                    <Link className={classes.menuLink} key={index}>{link.title}</Link>
+                    <Link className={classes.menuLink} key={index} to={link.path} smooth={true} duration={1000}>{link.title}</Link>
                 ))
             }
         </Box>

@@ -30,7 +30,7 @@ const TechSection = () => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.container}>
+    <Box className={classes.container} id="technologies">
         <Typography component="h4" variant="h4" >Tecnologías</Typography>
         <Typography component="h3" variant="h3">
             Frameworks de frontend y backend.
