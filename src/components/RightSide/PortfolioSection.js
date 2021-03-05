@@ -23,7 +23,7 @@ const PortfolioSection = () => {
   const classes = useStyles();
 
   return (
-    <Box  className={classes.container}>
+    <Box  className={classes.container}  id="projects">
         <Typography component="h4" variant="h4" >Portfolio</Typography>
         <Typography component="h3" variant="h3">
             Algunos Proyectos.
