@@ -4,6 +4,17 @@ import { Box, Typography, Grid } from '@material-ui/core';
 import imageData from '../../data/dataImages';
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    display: "flex", 
+    flexDirection: "column", 
+    justifyContent: "center", 
+    minHeight: "100vh", 
+    padding: "1.5rem",
+    [theme.breakpoints.down("md")]: {
+      padding: " 1.5rem 1.5rem 10vh 1.5rem",
+    }
+  }, 
+
   imageContainer: {
     display: "flex", 
     flexDirection: "column", 
@@ -19,7 +30,7 @@ const TechSection = () => {
   const classes = useStyles();
 
   return (
-    <Box minHeight="100vh" display="flex" flexDirection="column" justifyContent="center" p="1.5rem" >
+    <Box className={classes.container}>
         <Typography component="h4" variant="h4" >Tecnologías</Typography>
         <Typography component="h3" variant="h3">
             Frameworks de frontend y backend.

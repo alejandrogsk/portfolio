@@ -5,65 +5,31 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
 
 const useStyles = makeStyles((theme) => ({
-  paper: {
-    alignItems: 'center',
-    backgroundColor: theme.palette.secondary.light,
-    display: 'flex',
-    height:"5rem",
-    justifyContent: 'center',
-    width: "5rem",
-    [theme.breakpoints.down("lg")]: {
-      margin: ".5rem 0"
-    },
+  container: {
+    display: "flex", 
+    flexDirection: "column", 
+    justifyContent: "center", 
+    minHeight: "100vh", 
+    padding: "1.5rem",
     [theme.breakpoints.down("md")]: {
-      height: "4rem",
-      width: "4rem"
-    },
-    [theme.breakpoints.down("sm")]: {
-      height: "3rem",
-      width: "3rem"
+      padding: "10vh 1.5rem",
     }
-  },
-  icon: {
-    color: theme.palette.secondary.main,
-    height: "2em",
-    width: "2em",
-    [theme.breakpoints.down("md")]: {
-      height: "1.75em",
-      width: "1.75em"
-    },
-    [theme.breakpoints.down("sm")]: {
-      height: "1.2em",
-      width: "1.2em"
-    }
-  },
-  contactEmail:{
-    color: theme.palette.primary.light,
-    fontFamily: theme.typography.fontFamily.primary,
-    fontSize: "1.2rem",
-    marginLeft: "1rem",
-    textDecoration: "none",
-    "&:hover": {
-      color: theme.palette.secondary.main,
-      cursor: "pointer",
-      textDecoration: "underline",
-    },
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1rem"
-    }
-  },
-  location: {
-    color: theme.palette.primary.light,
-    fontFamily: theme.typography.fontFamily.primary,
-    fontSize: "1.2rem",
-    marginLeft: "1rem",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1rem"
+  }, 
+  contactDescription: {
+    fontSize: "1.1rem",
+    marginTop: "1rem",
+    margin: 0,
+    [theme.breakpoints.up("md")]: {
+      marginRight: "1rem"
     }
   },
   form: {
     display: "flex",
     flexDirection: "column",
+   
+    [theme.breakpoints.down("md")]: {
+      marginTop: "2rem"
+    }
   },
   formInput: {
     backgroundColor: theme.palette.secondary.light,
@@ -80,36 +46,20 @@ const ContactSection = () => {
   const classes = useStyles();
 
   return (
-    <Box height="100vh" 
-    display="flex"
-    flexDirection="column" 
-    justifyContent="center"
-    p="1.5rem">
-      <Typography component="h4" variant="h4" >Te ayudo?</Typography>
-      <Typography component="h3" variant="h3" >Contactar</Typography>
+    <Box className={classes.container}>
+      
       <Grid container>
         <Grid item xs={12} sm={12} md={6}>
 
-        <Box height="100%" display="flex" flexDirection="column" alignItems="flex-start" justifyContent="space-evenly">
-
-          <Box display="flex" alignItems="center">
-            <Paper className={classes.paper}>
-              <RoomOutlinedIcon className={classes.icon} />
-            </Paper>
-            <Typography className={classes.location}>Entre Ríos, Argentina.</Typography>
-          </Box>
-
-          <Box display="flex" alignItems="center">
-            <Paper className={classes.paper}>
-              <MailOutlineIcon className={classes.icon} />
-            </Paper>
-            <Typography>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alejandrogsk9900@gmail.com" rel="noreferrer nofollow" target="_blank"  className={classes.contactEmail}>alejandrogsk9900@gmail.com</a>
-            </Typography>
-          </Box>
-
+        <Box  height="100%" display="flex" flexDirection="column" alignItems="flex-start" justifyContent="start" >
+        <Typography component="h4" variant="h4" >Te ayudo?</Typography>
+        <Typography component="h3" variant="h3" >Contactar</Typography>
+        <Typography variant="body1" className={classes.contactDescription}>Por favos, si puedo ayudarte en alguno de tus proyectos
+          con javascript, o tienes alguna duda, contactame a mi email mediante este formulario. 
+        </Typography>
+        <Typography variant="body1" className={classes.contactDescription}>Tu consulta no es una molestia.</Typography>
+        <Typography variant="body1" className={classes.contactDescription}>¡Muchas Gracias!</Typography>
         </Box>
-
 
         </Grid>
         <Grid item xs={12} sm={12} md={6}>

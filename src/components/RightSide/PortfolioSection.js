@@ -6,13 +6,24 @@ import PortfolioCard from '../../ui/PortfolioCard';
 import dataProjects from '../../data/dataProjects';
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    backgroundColor: theme.palette.secondary.light,
+    display: "flex", 
+    flexDirection: "column", 
+    justifyContent: "center", 
+    minHeight: "100vh", 
+    padding: "1.5rem",
+    [theme.breakpoints.down("md")]: {
+      padding: "10vh 1.5rem",
+    }
+  } 
 }));
 
 const PortfolioSection = () => {
   const classes = useStyles();
 
   return (
-    <Box minHeight="100vh" display="flex" flexDirection="column" justifyContent="center" p="1.5rem" style={{backgroundColor: "#f2f3f7"}}>
+    <Box  className={classes.container}>
         <Typography component="h4" variant="h4" >Portfolio</Typography>
         <Typography component="h3" variant="h3">
             Algunos Proyectos.

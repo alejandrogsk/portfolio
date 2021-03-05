@@ -57,7 +57,7 @@ const HeroSection = () => {
     <Box p="1.5rem" height="100vh" display="flex" flexDirection="column" justifyContent="center">
         <Typography component="span" className={classes.span}>Hola, soy Alejandro</Typography>
         <Typography component="h1" className={classes.title}>
-            Desarrollador Fullstack Junior
+            Desarrollador <br/>Fullstack Junior
         </Typography>
         <Button variant="outlined" size="small" className={classes.buttonOutlined}>
           <CloudDownloadIcon className={classes.icon}/> Descargar CV

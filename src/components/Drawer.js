@@ -37,10 +37,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   menuButtonDos:{
-    backgroundColor: theme.palette.secondary.light,
-    color: theme.palette.secondary.main,
-      
-    
+    backgroundColor: theme.palette.secondary.main,
+    color: "white",
     position: "fixed",
     top: "4px",
     right: "4px",
@@ -48,9 +46,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
+
     "&:hover": {
-      backgroundColor: theme.palette.secondary.main,
-      color: "white",
+      color: theme.palette.secondary.main,
+      backgroundColor: theme.palette.secondary.light
     }
   },
   // necessary for content to be below app bar
