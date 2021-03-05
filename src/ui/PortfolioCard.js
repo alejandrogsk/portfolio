@@ -58,6 +58,12 @@ const useStyles = makeStyles( (theme) =>  ({
     fontSize: "1.25rem",
     marginRight: ".25rem"
   },
+  iconButton: {
+    "&:hover": {
+      color: "white",
+      backgroundColor: theme.palette.secondary.main
+    }
+  }
 }));
 
 export default function PortfolioCard({project}) {
@@ -84,11 +90,11 @@ export default function PortfolioCard({project}) {
 
       <CardActions style={{with: "100%"}}>
 
-        <IconButton target="_blank" variant="contained" color="secondary" href={project.linkPage}>
+        <IconButton target="_blank" variant="contained" color="secondary" size="small" href={project.linkPage}  className={classes.iconButton}> 
           <LinkIcon className={classes.linkIcon}/>
         </IconButton>
 
-        <IconButton target="_blank" variant="contained" color="secondary" size="small" href={project.linkFrontRepository} className={classes.githubIcons}>
+        <IconButton target="_blank" variant="contained" color="secondary" size="small" href={project.linkFrontRepository} className={classes.iconButton}>
           <GitHubIcon />
         </IconButton>
 
