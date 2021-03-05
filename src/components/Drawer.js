@@ -2,11 +2,6 @@ import React from 'react';
 
 import {Drawer, Hidden, IconButton, Typography, Box, Link} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-/*import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
-
-import Typography from '@material-ui/core/Typography';*/
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import HeroSection from './RightSide/HeroSection'
@@ -47,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     position: "fixed",
     top: "4px",
     right: "4px",
+    zIndex: 100,
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
@@ -74,45 +70,49 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "5rem",
     width: "9rem"
   },
-subtitle: {
+  subtitle: {
     color: theme.palette.secondary.main,
     fontFamily: theme.typography.fontFamily.primary,
     fontSize: "1rem",
     textTransform: "uppercase"
-},
-linkBox: {
+  },
+  linkBox: {
     alignItems: "center",
     display: "flex",
     flexDirection: "column",
     marginTop: "3rem",
     marginBottom: "auto",
     width: "100%"
-},
-menuLink: {
+  },
+  menuLink: {
     fontFamily: theme.typography.fontFamily.primary,
     fontWeight: 600,
     marginTop: "0.6rem",
     textTransform: "uppercase",
     "&:hover": {
-        color: theme.palette.secondary.main,
+      color: theme.palette.secondary.main,
         cursor: "pointer"
-    }
-},
-navbarContent: {
+      }
+  },
+  navbarContent: {
     alignItems: "center",
     display: "flex",
     flexDirection: "column",
     height: "100vh",
     justifyContent: "space-between",
-    
-}
+  },
+
+  footer: {
+    fontSize: ".8rem",
+    textAlign: "center",
+  }
 }));
 
 const menuLinks = [
-    {title:"Home", path: "/"},
-    {title:"Sobre Mí", path: "/"},
-    {title:"Proyectos", path: "/"},
-    {title:"Contacto", path: "/"}
+  {title:"Home", path: "/"},
+  {title:"Sobre Mí", path: "/"},
+  {title:"Proyectos", path: "/"},
+  {title:"Contacto", path: "/"}
 ]
 
 function ResponsiveDrawer(props) {
@@ -162,13 +162,13 @@ function ResponsiveDrawer(props) {
             <Typography component="h2" className={classes.name}>Alejandro Suarez</Typography>
             <Typography component="h6" className={classes.subtitle}>Javascript Developer</Typography>
             <Box className={classes.linkBox}>
-                {
-                    menuLinks.map((link, index) => (
-                        <Link className={classes.menuLink} key={index}>{link.title}</Link>
-                    ))
-                }
+              {
+                menuLinks.map((link, index) => (
+                    <Link className={classes.menuLink} key={index}>{link.title}</Link>
+                ))
+              }
             </Box>
-            <Typography>Copyright {new Date().getFullYear()} | Alejandro Suarez</Typography>
+            <Typography  className={classes.footer} >Copyright {new Date().getFullYear()} | Alejandro Suarez</Typography>
           
           </Drawer>
         </Hidden>
@@ -193,7 +193,7 @@ function ResponsiveDrawer(props) {
             }
         </Box>
 
-        <Typography>Copyright {new Date().getFullYear()} | Alejandro Suarez</Typography>
+        <Typography className={classes.footer}>Copyright {new Date().getFullYear()} | Alejandro Suarez</Typography>
 
           </Drawer>
         </Hidden>

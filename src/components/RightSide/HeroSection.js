@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Typography } from '@material-ui/core';
+import { Box, Typography, Button } from '@material-ui/core';
+import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -29,7 +30,24 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       fontSize: "1.4rem"
     },
-  }
+  },
+  buttonOutlined:{
+    alignSelf: "flex-start",
+    color: theme.palette.secondary.main,
+    backgroundColor: "white",
+    borderColor: theme.palette.secondary.main,
+    borderWidth: "1px",
+    fontFamily: theme.typography.fontFamily.primary,
+    marginTop: "2rem",
+    "&:hover": {
+      color: "white",
+      backgroundColor: theme.palette.secondary.main,
+    }
+  },
+  icon: {
+    marginRight: "4px",
+    fontSize: "1rem"
+  },
 }));
 
 const HeroSection = () => {
@@ -41,6 +59,9 @@ const HeroSection = () => {
         <Typography component="h1" className={classes.title}>
             Desarrollador Fullstack Junior
         </Typography>
+        <Button variant="outlined" size="small" className={classes.buttonOutlined}>
+          <CloudDownloadIcon className={classes.icon}/> Descargar CV
+        </Button>
     </Box>
   );
 }

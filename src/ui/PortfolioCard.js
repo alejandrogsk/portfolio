@@ -8,7 +8,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import { IconButton, Box } from '@material-ui/core';
+
+
 import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkIcon from '@material-ui/icons/Link';
 
 const useStyles = makeStyles( (theme) =>  ({
   root: {
@@ -16,49 +20,59 @@ const useStyles = makeStyles( (theme) =>  ({
   },
   media: {
     height: 140,
-    backgroundPosition: "top"
+    backgroundPosition: "top",
+    [theme.breakpoints.down("sm")]: {
+      height: 220
+    },
+  },
+  content: {
+    [theme.breakpoints.down("lg")]: {
+      minHeight: "7.5rem",
+    },
+    [theme.breakpoints.down("md")]: {
+      minHeight: "8.5rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      minHeight: "auto",
+    },
+  },
+  linkIcon: {
+    transform: "rotate(-45deg)"
   },
   button: {
-    color: "white",
-    backgroundColor: theme.palette.secondary.main,
     fontFamily: theme.typography.fontFamily.primary,
-    borderColor: theme.palette.secondary.main,
-    "&:hover": {
-      color: theme.palette.secondary.main,
-      backgroundColor: "white",
-      
-    }
   },
-  buttonOutlined:{
+  buttonGithub:{
     color: theme.palette.secondary.main,
     backgroundColor: "white",
     borderColor: theme.palette.secondary.main,
     borderWidth: "1px",
     fontFamily: theme.typography.fontFamily.primary,
+    marginLeft: "auto !important",
     "&:hover": {
       color: "white",
       backgroundColor: theme.palette.secondary.main,
     }
   },
   icon: {
-    marginRight: "4px",
-    fontSize: "1rem"
-  }
+    fontSize: "1.25rem",
+    marginRight: ".25rem"
+  },
 }));
 
 export default function PortfolioCard({project}) {
   const classes = useStyles();
 
-  console.log(project)
+
   return (
     <Card className={classes.root}>
-      <CardActionArea>
+      <CardActionArea href={project.linkPage} target="_blank">
         <CardMedia
           className={classes.media}
           image={project.image}
           title={project.title}
         />
-        <CardContent>
+        <CardContent className={classes.content}>
           <Typography gutterBottom variant="h6" component="h2">
             {project.title}
           </Typography>
@@ -67,16 +81,22 @@ export default function PortfolioCard({project}) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button target="_blank" variant="outlined" size="small" href={project.linkPage}  className={classes.button} >
-          View
-        </Button>
-        <Button variant="outlined" size="small"  href={project.linkFrontRepository} className={classes.buttonOutlined}>
-          <GitHubIcon className={classes.icon}/>
-          GitHub
-        </Button>
+
+      <CardActions style={{with: "100%"}}>
+
+        <IconButton target="_blank" variant="contained" color="secondary" href={project.linkPage}>
+          <LinkIcon className={classes.linkIcon}/>
+        </IconButton>
+
+        <IconButton target="_blank" variant="contained" color="secondary" size="small" href={project.linkFrontRepository} className={classes.githubIcons}>
+          <GitHubIcon />
+        </IconButton>
+
         {
-          project.linkBackRepository && <Button variant="outlined" size="small"  href={project.linkBackRepository}  className={classes.buttonOutlined}><GitHubIcon className={classes.icon}/> Backend </Button>
+          project.linkBackRepository &&
+            <Button variant="outlined" size="small"  href={project.linkBackRepository}  className={classes.buttonGithub}>
+              <GitHubIcon className={classes.icon}/> Backend 
+            </Button>
         }
       </CardActions>
     </Card>
