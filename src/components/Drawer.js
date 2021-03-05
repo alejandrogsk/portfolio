@@ -42,8 +42,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   menuButtonDos:{
-    backgroundColor: "red",
-    position: "absolute",
+    backgroundColor: theme.palette.secondary.main,
+    color: "white",
+    position: "fixed",
     top: "4px",
     right: "4px",
     [theme.breakpoints.up('sm')]: {

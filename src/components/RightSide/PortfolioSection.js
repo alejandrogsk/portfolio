@@ -12,7 +12,7 @@ const PortfolioSection = () => {
   const classes = useStyles();
 
   return (
-    <Box minHeight="100vh" display="flex" flexDirection="column" justifyContent="center" p="1.5rem" alignItems="center">
+    <Box minHeight="100vh" display="flex" flexDirection="column" justifyContent="center" p="1.5rem" style={{backgroundColor: "#f2f3f7"}}>
         <Typography component="h4" variant="h4" >Portfolio</Typography>
         <Typography component="h3" variant="h3">
             Algunos Proyectos.
