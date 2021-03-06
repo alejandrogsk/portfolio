@@ -11,10 +11,11 @@ const colorSecondaryLight = "#f2f3f7"
 
 //Font
 const fontPrimary = "'Raleway', sans-serif"
-const fontSecondary = "'Playfair Display', serif";
+const fontSecondary = "'Alegreya Sans', sans-serif";
 
 
 const brakpoints = createBreakpoints({});
+
 const customeTheme = createMuiTheme({
     brakpoints,
     palette: {
