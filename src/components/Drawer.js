@@ -11,6 +11,9 @@ import ContactSection from './RightSide/ContactSection';
 
 import { Link } from 'react-scroll'
 
+import Perfil from '../img/perfil.jpg'
+
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -163,7 +166,8 @@ function ResponsiveDrawer(props) {
               keepMounted: true, // Better open performance on mobile.
             }}
           >
-            <img className={classes.image} src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Alejandro"/>
+            {/*<img className={classes.image} src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Alejandro"/>*/}
+            <img className={classes.image} src={Perfil} alt="Alejandro"/>
             <Typography component="h2" className={classes.name}>Alejandro Suarez</Typography>
             <Typography component="h6" className={classes.subtitle}>Javascript Developer</Typography>
             <Box className={classes.linkBox}>
@@ -187,7 +191,7 @@ function ResponsiveDrawer(props) {
             variant="permanent"
             open
           >
-            <img className={classes.image} src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Alejandro"/>
+            <img className={classes.image} src={Perfil} alt="Alejandro"/>
         <Typography component="h2" variant="h2">Alejandro Suarez</Typography>
         <Typography component="h6" className={classes.subtitle}>Javascript Developer</Typography>
         <Box className={classes.linkBox}>
