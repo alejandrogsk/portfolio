@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography, Button } from '@material-ui/core';
+
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
 
 const useStyles = makeStyles((theme) => ({
@@ -55,6 +56,7 @@ const HeroSection = () => {
 
   return (
     <Box p="1.5rem" height="100vh" display="flex" flexDirection="column" justifyContent="center" id="home">
+      
         <Typography component="span" className={classes.span}>Hola, soy Alejandro</Typography>
         <Typography component="h1" className={classes.title}>
             Desarrollador <br/>Fullstack Junior
@@ -62,6 +64,7 @@ const HeroSection = () => {
         <Button variant="outlined" size="small" className={classes.buttonOutlined}>
           <CloudDownloadIcon className={classes.icon}/> Descargar CV
         </Button>
+      
     </Box>
   );
 }

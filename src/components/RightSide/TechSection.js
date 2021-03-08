@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography, Grid } from '@material-ui/core';
 import imageData from '../../data/dataImages';
 
+
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex", 

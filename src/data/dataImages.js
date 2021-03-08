@@ -10,9 +10,8 @@ import Redux from '../img/redux.png'
 import Material from '../img/material-ui.png'
 import Typescript from '../img/typescript.png'
 import Node from '../img/nodejs.png'
-import Express from '../img/express.png'
 import Mongo from '../img/mongodb.png'
-
+import Mysql from '../img/mysql.png'
 
 const imageData = [
     {
@@ -56,12 +55,12 @@ const imageData = [
         text: "Node Js"
     },
     {
-        image: Express,
-        text: "Express Js"
-    },
-    {
         image: Mongo,
         text: "Mongo DB"
+    },
+    {
+        image: Mysql,
+        text: "MySQL"
     }
 ]
 
