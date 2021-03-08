@@ -4,6 +4,8 @@ import { Box, Typography, Button } from '@material-ui/core';
 
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
 
+import Resumme from '../../assets/cv/alejandrosuarezcv.pdf'
+
 const useStyles = makeStyles((theme) => ({
   title: {
     color: theme.palette.secondary.main,  
@@ -61,7 +63,7 @@ const HeroSection = () => {
         <Typography component="h1" className={classes.title}>
             Desarrollador <br/>Fullstack Junior
         </Typography>
-        <Button variant="outlined" size="small" className={classes.buttonOutlined}>
+        <Button variant="outlined" size="small" className={classes.buttonOutlined} href={Resumme} target="_blank">
           <CloudDownloadIcon className={classes.icon}/> Descargar CV
         </Button>
       

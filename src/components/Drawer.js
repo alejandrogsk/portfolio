@@ -11,7 +11,7 @@ import ContactSection from './RightSide/ContactSection';
 
 import { Link } from 'react-scroll'
 
-import Perfil from '../img/perfil.jpg'
+import Perfil from '../assets/img/perfil.jpg'
 
 
 const drawerWidth = 240;

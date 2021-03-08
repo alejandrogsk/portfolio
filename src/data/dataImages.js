@@ -1,17 +1,17 @@
 
 
-import Html from '../img/html.png'
-import Css from '../img/css.png'
-import Bootstrap from '../img/bootstrap.png'
-import Sass from '../img/sass.png'
-import Javascript from '../img/javascript.png'
-import React from '../img/react.png'
-import Redux from '../img/redux.png'
-import Material from '../img/material-ui.png'
-import Typescript from '../img/typescript.png'
-import Node from '../img/nodejs.png'
-import Mongo from '../img/mongodb.png'
-import Mysql from '../img/mysql.png'
+import Html from '../assets/img/html.png'
+import Css from '../assets/img/css.png'
+import Bootstrap from '../assets/img/bootstrap.png'
+import Sass from '../assets/img/sass.png'
+import Javascript from '../assets/img/javascript.png'
+import React from '../assets/img/react.png'
+import Redux from '../assets/img/redux.png'
+import Material from '../assets/img/material-ui.png'
+import Typescript from '../assets/img/typescript.png'
+import Node from '../assets/img/nodejs.png'
+import Mongo from '../assets/img/mongodb.png'
+import Mysql from '../assets/img/mysql.png'
 
 const imageData = [
     {

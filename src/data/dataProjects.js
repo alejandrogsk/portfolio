@@ -1,7 +1,7 @@
 
-import Ecommerce from '../img/ecommerce.png';
-import Agencya from '../img/agencya.png';
-import Agencyb from '../img/agencyb.png';
+import Ecommerce from '../assets/img/ecommerce.png';
+import Agencya from '../assets/img/agencya.png';
+import Agencyb from '../assets/img/agencyb.png';
 
 const dataProjects = [
     {
