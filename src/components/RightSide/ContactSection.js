@@ -1,6 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Typography, Grid, TextField, Button } from '@material-ui/core';
+import { Box, Typography, Grid, TextField, Button, IconButton } from '@material-ui/core';
+
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 //from email.js
 import emailjs from 'emailjs-com';
@@ -40,8 +43,20 @@ const useStyles = makeStyles((theme) => ({
   formButton: {
     marginTop: ".5rem",
     width: "50%"
+  },
+  iconButton: {
+    marginTop: "0.5rem",
+    "&:hover": {
+      color: "white",
+      backgroundColor: theme.palette.secondary.main
+    }
   }
 }));
+
+const contactLinks = {
+  github: 'https://github.com/alejandrogsk',
+  linkedIn: 'https://www.linkedin.com/in/alejandro-suarez-1764881b7',
+}
 
 const ContactSection = () => {
   const classes = useStyles();
@@ -72,11 +87,22 @@ const ContactSection = () => {
         <Box  height="100%" display="flex" flexDirection="column" alignItems="flex-start" justifyContent="start" >
         <Typography component="h4" variant="h4" >Te ayudo?</Typography>
         <Typography component="h3" variant="h3" >Contactame</Typography>
-        <Typography variant="body1" className={classes.contactDescription}>Por favos, si puedo ayudarte en alguno de tus proyectos
-          con javascript, o tienes alguna duda, contactame a mi email mediante este formulario. 
+        <Typography variant="body1" className={classes.contactDescription}>Si puedo ayudarte en alguno de tus proyectos
+          con javascript, o tienes alguna duda, contactame a mi email mediante este formulario, o tambien mediante github o linkedin. 
         </Typography>
         <Typography variant="body1" className={classes.contactDescription}>Tu consulta no es una molestia.</Typography>
         <Typography variant="body1" className={classes.contactDescription}>¡Muchas Gracias!</Typography>
+        
+        <Box display="flex">
+          <IconButton className={classes.iconButton} target="_blank" variant="contained" color="secondary" size="small" href={contactLinks.github}>
+            <GitHubIcon />
+          </IconButton>
+
+          <IconButton className={classes.iconButton} target="_blank" variant="contained" color="secondary" size="small" href={contactLinks.linkedIn}>
+            <LinkedInIcon />
+          </IconButton>
+        </Box>
+        
         </Box>
 
         </Grid>
